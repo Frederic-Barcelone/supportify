@@ -8,42 +8,37 @@
         <div class="large-12 columns" role="content">
             <h3>Listing articles</h3>
             <hr />
-            <%= select_tag :set_locale, options_for_select(Supportify.locales, I18n.locale) %>
+            <span class: "linkform"> <%= select_tag :set_locale, options_for_select(Supportify.locales, I18n.locale) %></span>
             <hr />
-
-<table>
-  <thead>
-    <tr>
-      <th>Thumbnail</th>
-      <th>Title</th>
-      <th>Slug</th>
-      <th>Locale</th>
-      <th>Lists</th>
-      <th>Author</th>
-      <th>Published at</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+            <table class="responsive">
+              <thead>
+                <tr>
+                  <th><span class="theader">Title</th>
+                  <th><span class="theader">Locale</th>
+                  <th><span class="theader">Tags</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
 
   <tbody>
     <% @articles.each do |article| %>
       <tr>
         <!-- <td><%#= image_tag article.image_url(:thumb) %> </td> -->
-        <td><%= article.title %></td>
+        <td class="trow"><%= article.title %></td>
          <!-- <td><%# = article.slug %></td> -->
-        <td><%= article.locale %></td>
-        <td>
+        <td class="trow"><%= article.locale %></td>
+        <td class="trow">
           Tag list: <b><%= article.tag_list.to_sentence %></b><br/>
           Category list: <b><%= article.category_list.to_sentence %></b><br/>
           Admin list: <b><%= article.admin_tag_list.to_sentence %></b>
         </td>
          <!-- <td><td><%= article.author_id %></td>-->
          <!-- <td><td><%= article.published_at %></td>-->
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', article , class: "linkform"%></td>
+        <td><%= link_to 'Edit', edit_article_path(article) , class: "linkform"%></td>
+        <td><%= link_to 'Destroy', article, class: "linkform", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -51,7 +46,7 @@
 
 <br>
 
-<%= link_to 'New Article', new_article_path %>
+<%= link_to 'New Article', new_article_path, class: "linkform"  %>
 </div>
 </div>
 </div>
