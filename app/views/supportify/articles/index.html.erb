@@ -26,13 +26,11 @@
     <% @articles.each do |article| %>
       <tr>
         <!-- <td><%#= image_tag article.image_url(:thumb) %> </td> -->
-        <td class="trow"><%= article.title %></td>
+        <td class="trow"><%= truncate(article.title, length: 60) %></td>
          <!-- <td><%# = article.slug %></td> -->
         <td class="trow"><%= article.locale %></td>
         <td class="trow">
-          Tag list: <b><%= article.tag_list.to_sentence %></b><br/>
-          Category list: <b><%= article.category_list.to_sentence %></b><br/>
-          Admin list: <b><%= article.admin_tag_list.to_sentence %></b>
+          [<%= article.tag_list.to_sentence %>][<%= article.category_list.to_sentence %>][<%= article.admin_tag_list.to_sentence %>]
         </td>
          <!-- <td><td><%= article.author_id %></td>-->
          <!-- <td><td><%= article.published_at %></td>-->
