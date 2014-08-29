@@ -1,6 +1,17 @@
-<p id="notice"><%= notice %></p>
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+
+<br>
+<div class="row">
+   <div class="small-11 small-centered large-centered columns">
+    <div class="panel-login-header"><span class="titleloginbody text-center">Admin [ Showing articles ]</span></div>
+    <div class="panel-login-body clearfix">
+      <div class="row">
+        <div class="large-12 columns" role="content">
+<fieldset class="fieldset1">
+<p id="notice"><%= notice %></p><br>
+<%= link_to 'Edit', edit_article_path(@article),  class: "linkform"   %> |
+<%= link_to 'Back', articles_path,  class: "linkform"   %> | 
+<%= link_to 'New Article', new_article_path, class: "linkform"  %>
+<br>
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -46,4 +57,10 @@
   <strong>Body:</strong>
   <%= @article.body.html_safe %>
 </p>
+</fieldset>
+</div>
+</div>
+</div>
+</div>
+</div>
 

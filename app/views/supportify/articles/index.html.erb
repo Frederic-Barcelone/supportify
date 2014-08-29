@@ -2,7 +2,7 @@
 <br>
 <div class="row">
    <div class="small-11 small-centered large-centered columns">
-    <div class="panel-login-header"><span class="titleloginbody text-center">Admin // Listing articles</span></div>
+    <div class="panel-login-header"><span class="titleloginbody text-center">Admin [ Listing articles ]</span></div>
     <div class="panel-login-body clearfix">
       <div class="row">
         <div class="large-12 columns" role="content">
@@ -10,6 +10,8 @@
             <hr />
             <span class: "linkform"> <%= select_tag :set_locale, options_for_select(Supportify.locales, I18n.locale) %></span>
             <hr />
+            <%= link_to 'New Article', new_article_path, class: "linkform"  %>
+               <hr />
             <table class="responsive">
               <thead>
                 <tr>
