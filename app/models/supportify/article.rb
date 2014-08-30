@@ -11,7 +11,9 @@ module Supportify
       }
     
       
-    geocoded_by :address, :latitude  => :lat, :longitude => :lng    # RAILS-GEOCODER
+    attr_accessible :address, :latitude, :longitude
+    geocoded_by :address
+    after_validation :geocode, :if => :address_changed? 
     
     before_save :set_published_at
     after_create :create_for_other_locales
@@ -34,6 +36,8 @@ module Supportify
     
     private
     
+
+
     def create_for_other_locales
       #TODO
     end
