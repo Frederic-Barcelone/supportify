@@ -6,7 +6,7 @@
     <div class="panel-login-body clearfix">
       <div class="row">
         <div class="large-12 columns" role="content">
-            <h3>Listing articles</h3>
+            Articles >> Listing articles
             <hr />
             <span class: "linkform"> <%= select_tag :set_locale, options_for_select(Supportify.locales, I18n.locale) %></span>
             <hr />
@@ -15,6 +15,7 @@
             <table class="responsive">
               <thead>
                 <tr>
+                  <th><span class="theader">Codif</th>
                   <th><span class="theader">Title</th>
                   <th><span class="theader">Locale</th>
                   <th><span class="theader">Tags</th>
@@ -25,10 +26,11 @@
               </thead>
 
   <tbody>
-    <% @articles.each do |article| %>
+    <% @articles.order("codif asc").each do |article| %>
       <tr>
         <!-- <td><%#= image_tag article.image_url(:thumb) %> </td> -->
-        <td class="trow"><%= truncate(article.title, length: 60) %></td>
+        <td class="trow"><%= article.codif%></td>
+        <td class="trow"><%= truncate(article.title, length: 50) %></td>
          <!-- <td><%# = article.slug %></td> -->
         <td class="trow"><%= article.locale %></td>
         <td class="trow">
@@ -44,7 +46,7 @@
   </tbody>
 </table>
 
-<br>
+<hr>
 
 <%= link_to 'New Article', new_article_path, class: "linkform"  %>
 </div>
