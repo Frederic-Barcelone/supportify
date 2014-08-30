@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  
+    <%= f.input :codif %>
   <%= f.input :title %>
   <%= f.input :slug, input_html: {readonly: true} %>
   <%= f.input :locale, collection: Supportify.locales %>
