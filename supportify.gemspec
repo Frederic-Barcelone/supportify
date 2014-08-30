@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'acts-as-taggable-on', '>= 3.0.1'
   s.add_dependency "select2-rails"
   s.add_dependency 'pg'
+  s.add_dependency 'geocoder'
   s.add_dependency 'pg_search'
   s.add_dependency "non-stupid-digest-assets"
   
