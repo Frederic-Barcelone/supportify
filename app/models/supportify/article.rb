@@ -1,5 +1,5 @@
-module Supportify
-  class Article < ActiveRecord::Base
+module Supportify 
+  class Article < ActiveRecord::Base  geocoded_by :address, :latitude  => :lat, :longitude => :lng    # RAILS-GEOCODER
     include PgSearch
     pg_search_scope :search, 
       against: {
@@ -9,6 +9,9 @@ module Supportify
       associated_against: {
         tags: {name: 'B'}
       }
+    
+
+
     
     before_save :set_published_at
     after_create :create_for_other_locales
