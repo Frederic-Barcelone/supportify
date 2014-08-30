@@ -10,7 +10,7 @@ module Supportify
         tags: {name: 'B'}
       }
     
-
+      
 
     
     before_save :set_published_at
