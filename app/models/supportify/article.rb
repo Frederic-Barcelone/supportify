@@ -18,7 +18,7 @@ module Supportify
     
     acts_as_taggable_on :tags, :categories, :admin_tags
     
-    validates :title, :slug, :locale, :body, :codif presence: true
+    validates :title, :slug, :locale, :body, :codif, presence: true
     validates :slug, uniqueness: true
     validates :locale, inclusion: Supportify.locales.map(&:to_s)
 
